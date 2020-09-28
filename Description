@@ -1,0 +1,15 @@
+Hi this is the github repository of the codes I made during the period of Jun 2020 -Aug 2020 for the purpose of completion of internship at CodeSpeedy Pvt. Lmt.
+
+
+The repository consists of solutions of total of 10 tasks  as :
+
+First Task: To make a program to find the minimum cost path where you can move up, down, left and right.
+            This is achieved by making 
+            1) a class to store the indices of a cell in the 2D matrix,
+            2) an arraylist to store the indices of the cells traversed,
+            3) a function class to store the functions used to complete the task,
+            4) and a main driver function to c begin the task.
+            
+Second Task: To make a program to left rotate an array of size N by d places.
+
+Third Task: 
