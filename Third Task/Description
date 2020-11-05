@@ -1,0 +1,21 @@
+This file consists of the third task that is to check if a given number can be displayed using a seven 
+segment LEDs or seven segment LED lose segments.
+
+This is achieved by seeing how many LEDs and segments is required by each digit and maximum digits can 
+be adjusted which we will see in the below table:
+
+7 Segment LEDs:
+(0-9) - 1
+11 - 1
+
+Lose 7 Segment LEDs:
+1 - 2
+2 - 5
+3 - 5
+4 - 4
+5 - 5
+6 - 6
+7 - 3
+8 - 7
+9 - 6
+0 - 6
