@@ -1,0 +1,7 @@
+This is the file to complete the task of left rotating the array by d places.
+
+This is achieved by simply analysing the border conditions, in other words, the index that belong to the 
+condtion 0 <= i < n.
+
+Since in these indexes the values could not just be shifted left but have to placed at the indexes in the\
+range (n-d) <= i < n.
