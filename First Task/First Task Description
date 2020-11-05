@@ -1,0 +1,10 @@
+This folder consists of four files:
+
+  i. CalculateMinCostPath.java : This file contains the path move functions to move along the 2-d array while calculating 
+                                 the min-cost path to reach the specified destination from (0,0).
+                                 
+  ii. Indices.java : This file contains the data structure to store the index in the format of (x,y)
+  
+  iii. main.java : This file contains the main driver function which contains the 2-d cost array and the destination. In 
+                   this function we also call the min-cost path calculating function.
+  iv. Traverselist.java : This contains the custom arraylist to store the indices already traversed to avoid repetition of cells.
