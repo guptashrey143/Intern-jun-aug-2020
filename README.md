@@ -5,7 +5,7 @@ CodeSpeedy Pvt Lmt.
 Hi, this git repository of the codes I created during the period of Jun 2020 -Aug 2020 for the purpose of completion of internship at CodeSpeedy Pvt. Lmt.
 
 
-The repository consists of solutions of total of 10 tasks  as :
+The repository consists of solutions of total of 10 tasks  which are as follows :
 
 First Task: To make a program to find the minimum cost path where you can move up, down, left and right.
             
