@@ -1,0 +1,3 @@
+This folder consists of 2 files to convert a singly linked list to a circular linked list,
+i. List.java: This file is the linked list declaration 
+ii. ListToCircular.java: This is the main function declaration to call the functions to convert the singly linked list to circular linked list.
