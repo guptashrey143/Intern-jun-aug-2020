@@ -1,1 +1,3 @@
-This is the program to convert a given linked list to an array and an array to a linked list.
+This folder comprises of 2 files, 
+i. List.java: To declare the linked list
+ii. ConvertingListToArray.java: To call the functions to convert the list to array and vice-versa.
