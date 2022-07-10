@@ -1,0 +1,62 @@
+package TenthTask;
+
+public class BinPack {
+    public static int[] sort(int array[]){
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if(array[i] < array[j]){
+                    int t = array[i];
+                    array[i] = array[j];
+                    array[j] = t;
+                }
+            }
+        }
+        return array;
+    }
+
+    public static int binPacking(int array[], int limit){
+
+        int retValue = 0;
+
+        int sortedArray[] = sort(array);
+        if(sortedArray[0] > limit){
+            return -1;
+        }
+
+        int flagArray[] = new int[array.length];
+
+        for (int i = 0; i < sortedArray.length; i++) {
+            if (flagArray[i] != 0) {        //If the weight already has been added to a box we
+                                            // will bypass that weight as to not add add it again
+                continue;
+            } else {
+
+                int curWeight = sortedArray[i];
+                int j = i + 1;
+
+                while (j < sortedArray.length) {           //To traverse the rest of the array
+                                                           // to see if another weight can be added or not
+
+                    if (flagArray[j] == 0 && curWeight + sortedArray[j] <= limit ) {
+                        curWeight += sortedArray[j];
+                        flagArray[j]++;                   //To mark that the weight has now been added to a box
+
+                    }
+                    j++;
+
+                }
+
+                retValue++;
+            }
+        }
+        return retValue;
+    }
+
+
+    public static void main(String[] args) {
+
+        int array[] = {2,4,6,1,8,7,8,6,9};
+        int limit = 10;
+        System.out.println("Minimum amount of boxes required :" + binPacking(array, limit));
+    }
+}
