@@ -1,0 +1,92 @@
+package EighthTask;
+
+
+///In this code we are going to find the shortest sub-array of a given Array having array GCD equal to a given GCD
+
+
+public class SubArrayofGivenGCD {
+
+
+    public static int gcd(int a, int b) {
+        if (a >= b) {
+            for (int i = b; i > 0; i--) {
+                if (b % i == 0 && a % i == 0) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = a; i > 0; i--) {
+                if (b % i == 0 && a % i == 0) {
+                    return i;
+                }
+            }
+        }
+        return 0;
+    }
+
+    public static int arrayGCD(int[] array, int si, int se) {
+        if (si == se) {
+            return array[si];
+        }
+        if (si + 1 == se) {
+            return gcd(array[si], array[se]);
+        }
+
+        int mid = (si + se) / 2;
+
+        return gcd(arrayGCD(array, mid + 1, se), arrayGCD(array, si, mid));
+    }
+
+    public static int GCDGivenRange(int[] array, int si, int se) {
+
+        if (si < 0 || se >= array.length || si > se) {
+            return -1;
+        }
+        return arrayGCD(array, si, se);
+    }
+
+    public static boolean matchGCD(int[] array, int GCD) {
+        int arrayGCD = GCDGivenRange(array, 0, array.length - 1);
+        return GCD == arrayGCD;
+    }
+
+    public static void SubArrayGenerator(int[] array, int GCD) {
+
+        int length = array.length;
+
+        int index = 0;
+
+        for (int i = 0; i < array.length; i++) {
+
+            for (int j = i; j < array.length; j++) {
+
+                int[] subArray = new int[j - i + 1];
+
+                if (j + 1 - i >= 0) System.arraycopy(array, i, subArray, 0, j + 1 - i);
+
+                if (matchGCD(subArray, GCD)) {
+                    if (subArray.length >= 2) {
+                        if (subArray.length < length) {
+                            length = subArray.length;
+                            index = i;
+                        }
+                    }
+                }
+
+            }
+
+        }
+        if (length == array.length && matchGCD(array, GCD)) {
+            System.out.println("GCD unmatched in Array");
+        } else {
+            for (int i = 0; i < length; i++) {
+                System.out.print(array[i + index] + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = new int[]{12, 6, 18, 4, 6, 9};
+        SubArrayGenerator(array, 3);
+    }
+}
