@@ -1,0 +1,44 @@
+package NinthTask;
+
+
+public class MinMaxArray {
+    public static int[] min_max_query(int array[], int si, int se){
+        int retArray[] = new int[2];
+        if(si == se){
+            retArray[0] = array[si];
+            retArray[1] = array[si];
+        }else if(si + 1 == se){
+            if(array[si] < array[se]){
+                retArray[0] = array[si];
+                retArray[1] = array[se];
+            }else{
+                retArray[1] = array[si];
+                retArray[0] = array[se];
+            }
+        }else{
+            int mid = (si + se) / 2;
+            int arrayLeft[] = min_max_query(array, si, mid);
+            int arrayRight[] = min_max_query(array, mid + 1, se);
+            if(arrayLeft[0] < arrayRight[0]){
+                retArray[0] = arrayLeft[0];
+            }else{
+                retArray[0] = arrayRight[0];
+            }
+
+            if(arrayLeft[1] > arrayRight[1]){
+                retArray[1] = arrayLeft[1];
+            }else{
+                retArray[1] = arrayRight[1];
+            }
+        }
+
+        return retArray;
+    }
+
+    public static void main(String[] args) {
+        int array[] = {5,2,4,3,6,7,1};
+        int anotherArray[] = min_max_query(array, 0,5);
+        System.out.println("Minimum in range 0 : 5 = " + anotherArray[0]);
+        System.out.println("Maximum in range 0 : 5 = " + anotherArray[1]);
+    }
+}
